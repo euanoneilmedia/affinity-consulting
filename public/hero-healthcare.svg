@@ -1,0 +1,46 @@
+<svg width="1600" height="1200" viewBox="0 0 1600 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#EEF3F4"/>
+      <stop offset="1" stop-color="#DDE6E8"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1B6B7B" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#1B6B7B" stop-opacity="0.05"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#D87E52" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#D87E52" stop-opacity="0.65"/>
+    </linearGradient>
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M44 0H0V44" stroke="#D8DEE3" stroke-opacity="0.55"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="1200" fill="url(#bg)"/>
+  <rect width="1600" height="1200" fill="url(#grid)"/>
+
+  <rect x="140" y="180" width="920" height="630" rx="20" fill="#FFFFFF"/>
+  <rect x="180" y="220" width="840" height="550" rx="14" fill="url(#panel)"/>
+
+  <rect x="930" y="330" width="510" height="630" rx="20" fill="#F2F4F5"/>
+  <rect x="1030" y="470" width="450" height="490" rx="16" fill="#0F1B2D"/>
+  <path d="M1030 810C1170 700 1310 650 1480 610V960H1030V810Z" fill="url(#accent)"/>
+
+  <rect x="260" y="300" width="200" height="120" rx="12" fill="#FFFFFF"/>
+  <rect x="290" y="330" width="140" height="16" rx="8" fill="#1B6B7B" fill-opacity="0.22"/>
+  <rect x="290" y="360" width="100" height="12" rx="6" fill="#6B7280" fill-opacity="0.34"/>
+
+  <rect x="500" y="330" width="420" height="300" rx="14" fill="#FFFFFF" fill-opacity="0.9"/>
+  <circle cx="650" cy="450" r="88" fill="#1B6B7B" fill-opacity="0.14"/>
+  <circle cx="770" cy="450" r="88" fill="#D87E52" fill-opacity="0.2"/>
+  <rect x="608" y="412" width="200" height="76" rx="16" fill="#FFFFFF"/>
+  <rect x="630" y="438" width="156" height="14" rx="7" fill="#111827" fill-opacity="0.38"/>
+
+  <rect x="390" y="700" width="580" height="70" rx="12" fill="#FFFFFF"/>
+  <rect x="430" y="726" width="500" height="16" rx="8" fill="#1B6B7B" fill-opacity="0.2"/>
+
+  <rect x="1200" y="255" width="180" height="130" rx="12" fill="#FFFFFF"/>
+  <rect x="1232" y="290" width="115" height="12" rx="6" fill="#111827" fill-opacity="0.35"/>
+  <rect x="1232" y="314" width="75" height="10" rx="5" fill="#6B7280" fill-opacity="0.4"/>
+</svg>

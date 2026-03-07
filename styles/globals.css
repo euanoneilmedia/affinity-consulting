@@ -1,0 +1,221 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Layout */
+@layer components {
+  .container-max {
+    @apply mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-lg {
+    @apply mx-auto max-w-screen-lg px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-md {
+    @apply mx-auto max-w-2xl px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* Typography */
+@layer base {
+  html {
+    @apply scroll-smooth bg-background-primary;
+  }
+
+  body {
+    @apply text-text-secondary antialiased;
+  }
+
+  h1 {
+    @apply text-4xl font-semibold tracking-tight text-text-primary sm:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl font-semibold tracking-tight text-text-primary sm:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl font-semibold tracking-tight text-text-primary;
+  }
+
+  h4 {
+    @apply text-xl font-semibold text-text-primary;
+  }
+
+  h5 {
+    @apply text-lg font-semibold text-text-secondary;
+  }
+
+  h6 {
+    @apply text-base font-semibold text-text-secondary;
+  }
+
+  p {
+    @apply leading-8;
+  }
+
+  a {
+    @apply text-brand-primary-light transition-colors duration-200 hover:text-brand-primary focus-visible-ring;
+  }
+}
+
+/* Buttons */
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-card px-6 py-3 font-medium transition-all duration-200 ease-smooth;
+  }
+
+  .btn-primary {
+    @apply btn bg-brand-primary text-white hover:bg-brand-primary-light active:bg-brand-primary-dark;
+  }
+
+  .btn-secondary {
+    @apply btn border-2 border-brand-secondary bg-transparent text-brand-secondary hover:bg-brand-secondary hover:text-white;
+  }
+
+  .btn-outline {
+    @apply btn border-2 border-neutral-600 bg-transparent text-text-primary hover:border-neutral-500 hover:bg-neutral-800;
+  }
+
+  .btn-ghost {
+    @apply btn bg-transparent text-text-secondary hover:bg-background-card;
+  }
+
+  .btn-sm {
+    @apply px-4 py-2 text-sm;
+  }
+
+  .btn-lg {
+    @apply px-8 py-4 text-lg;
+  }
+}
+
+/* Cards */
+@layer components {
+  .card {
+    @apply rounded-card border border-neutral-700 bg-background-card p-6 shadow-card transition-all duration-200;
+  }
+
+  .card-elevated {
+    @apply rounded-card-lg bg-background-card p-8 shadow-card transition-all duration-200 hover:shadow-card-hover;
+  }
+}
+
+/* Sections */
+@layer components {
+  .section {
+    @apply py-24 lg:py-32;
+  }
+
+  .section-sm {
+    @apply py-16 lg:py-20;
+  }
+
+  .section-lg {
+    @apply py-32 lg:py-40;
+  }
+
+  .section-light {
+    @apply bg-background-card;
+  }
+
+  .section-white {
+    @apply bg-background-card;
+  }
+
+  .section-dark {
+    @apply bg-background-primary;
+  }
+}
+
+/* Utility animations */
+@layer utilities {
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes tealDrift {
+    0% {
+      transform: translate3d(0, 0, 0) scale(1);
+      opacity: 0.28;
+    }
+    50% {
+      transform: translate3d(18px, -14px, 0) scale(1.05);
+      opacity: 0.4;
+    }
+    100% {
+      transform: translate3d(0, 0, 0) scale(1);
+      opacity: 0.28;
+    }
+  }
+
+  @keyframes scrollLeft {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out;
+  }
+
+  .animate-teal-drift {
+    animation: tealDrift 12s ease-in-out infinite;
+  }
+
+  .animate-teal-drift-delayed {
+    animation: tealDrift 15s ease-in-out infinite;
+    animation-delay: 1.4s;
+  }
+
+  .animate-scroll-left {
+    animation: scrollLeft 30s linear infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-teal-drift,
+    .animate-teal-drift-delayed,
+    .animate-float,
+    .animate-float-delayed,
+    .animate-pulse-ring,
+    .animate-rotate-slow {
+      animation: none;
+      opacity: 0.3;
+    }
+
+    .animate-scroll-left {
+      animation: none;
+    }
+  }
+}
+
+/* Focus states for accessibility */
+@layer components {
+  .focus-visible-ring {
+    @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-primary;
+  }
+}
