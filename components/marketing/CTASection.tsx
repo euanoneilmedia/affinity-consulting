@@ -29,8 +29,8 @@ export function CtaSection({
   return (
     <Section variant="light" size="sm">
       <Container size="lg">
-        <DarkCard 
-          variant="default" 
+        <DarkCard
+          variant="default"
           className="border-white/20 bg-gradient-to-br from-brand-primary-dark via-brand-primary to-brand-primary-light p-8 text-center shadow-xl sm:p-12"
         >
           {eyebrow && (
@@ -47,7 +47,12 @@ export function CtaSection({
             </p>
           )}
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
-            <Button variant="primary" size="md" href={primaryCta.href}>
+            <Button 
+              variant="primary" 
+              size="md" 
+              href={primaryCta.href}
+              className="!bg-white !text-brand-primary hover:!bg-white/90 hover:!text-brand-primary-dark active:!bg-white/80"
+            >
               {primaryCta.label}
             </Button>
             {secondaryCta && (
