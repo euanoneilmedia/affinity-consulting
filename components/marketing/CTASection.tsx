@@ -47,16 +47,21 @@ export function CtaSection({
             </p>
           )}
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
-            <Button 
-              variant="primary" 
-              size="md" 
+            <Button
+              variant="primary"
+              size="md"
               href={primaryCta.href}
               className="!bg-white !text-brand-primary hover:!bg-white/90 hover:!text-brand-primary-dark active:!bg-white/80"
             >
               {primaryCta.label}
             </Button>
             {secondaryCta && (
-              <Button variant="secondary" size="md" href={secondaryCta.href}>
+              <Button
+                variant="secondary"
+                size="md"
+                href={secondaryCta.href}
+                className="!border-white !text-white hover:!bg-white/10 hover:!text-white"
+              >
                 {secondaryCta.label}
               </Button>
             )}
