@@ -27,7 +27,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <Image
-              src="/logos/Affinity-Consulting-Logo-Colour-No-Bg.png"
+              src="/logos/Affinity-Consulting-Logo-Colour-Black-Text-No-Bg.png"
               alt="Affinity Consulting"
               width={250}
               height={84}
