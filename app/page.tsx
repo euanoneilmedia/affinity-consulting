@@ -221,17 +221,23 @@ export default function Home() {
       <Section id="approach" variant="dark" size="sm">
         <Container size="xl">
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
-            <DarkCard className="border-neutral-600">
-              <div className="mb-3">
-                <Eyebrow variant="dark">Our Approach</Eyebrow>
+            <DarkCard className="relative overflow-hidden border-white/10 bg-cover bg-center shadow-xl animate-fade-in-up">
+              {/* Gradient overlay for future background image */}
+              <div className="absolute inset-0 z-0 bg-gradient-to-br from-background-accent/60 via-background-accent/70 to-background-accent/85" />
+
+              {/* Content above overlay */}
+              <div className="relative z-10">
+                <div className="mb-3">
+                  <Eyebrow variant="onDark">Our Approach</Eyebrow>
+                </div>
+                <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+                  Structured, collaborative, and delivery-focused.
+                </h2>
+                <p className="mt-5 max-w-md text-base leading-8 text-neutral-200">
+                  We combine clinical, operational, digital, and leadership perspectives to
+                  co-create solutions that are realistic and resilient.
+                </p>
               </div>
-              <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-                Structured, collaborative, and delivery-focused.
-              </h2>
-              <p className="mt-5 max-w-md text-base leading-8 text-neutral-200">
-                We combine clinical, operational, digital, and leadership perspectives to co-create
-                solutions that are realistic and resilient.
-              </p>
             </DarkCard>
             <ol className="space-y-5">
               {[
@@ -249,11 +255,12 @@ export default function Home() {
                 },
               ].map((step, index) => (
                 <li key={step.title}>
-                  <DarkCard hover className="border-neutral-600">
+                  <DarkCard
+                    hover
+                    className={`border-white/10 hover:scale-[1.02] animate-stagger-${index + 1}`}
+                  >
                     <div className="mb-2">
-                      <Eyebrow variant="dark" className="!bg-neutral-700 !text-neutral-300">
-                        {String(index + 1).padStart(2, "0")}
-                      </Eyebrow>
+                      <Eyebrow variant="onDark">{String(index + 1).padStart(2, "0")}</Eyebrow>
                     </div>
                     <h3 className="mb-2 text-xl font-semibold tracking-tight text-white">
                       {step.title}
