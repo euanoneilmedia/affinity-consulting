@@ -61,7 +61,7 @@ export function TrustSection({ eyebrow, title, description, items, trustedBy }: 
               title={item.label}
               description={item.description}
               numberTone="teal"
-              className="min-h-[220px] border-neutral-700"
+              className="min-h-[220px]"
             />
           ))}
         </div>
