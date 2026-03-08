@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui";
 
 interface NavLink {
@@ -25,10 +26,14 @@ export function Header() {
         <nav className="flex items-center justify-between py-4 sm:py-6">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-card bg-brand-primary shadow-card">
-              <span className="text-lg font-bold text-white">AC</span>
-            </div>
-            <span className="hidden font-semibold text-text-primary sm:inline">Affinity</span>
+            <Image
+              src="/logos/Affinity-Consulting-Logo-Colour-No-Bg.png"
+              alt="Affinity Consulting"
+              width={250}
+              height={84}
+              className="h-10 w-auto"
+            />
+            <span className="sr-only">Affinity Consulting</span>
           </Link>
 
           {/* Desktop Navigation */}
