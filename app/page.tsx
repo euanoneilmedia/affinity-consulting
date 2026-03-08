@@ -114,7 +114,7 @@ export default function Home() {
         title={
           <>
             Designing and{" "}
-            <span className="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand-primary-light to-brand-primary bg-clip-text text-transparent">
               delivering better
             </span>{" "}
             health and care.

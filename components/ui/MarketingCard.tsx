@@ -85,7 +85,7 @@ export function MarketingCard({
                 numberStyle === "circle" ? (
                   <span
                     className={cn(
-                      "inline-flex h-12 w-12 items-center justify-center rounded-full bg-brand-primary/20 text-sm font-semibold shadow-[0_0_18px_rgba(42,138,158,0.25)]",
+                      "inline-flex h-12 w-12 items-center justify-center rounded-full bg-brand-primary/20 text-sm font-semibold shadow-[0_0_18px_rgba(10,122,140,0.25)]",
                       toneClasses[numberTone],
                     )}
                   >

@@ -7,10 +7,10 @@ module.exports = {
       colors: {
         // Brand colors extracted from Affinity Consulting logo
         brand: {
-          primary: "#1b6b7b", // Deep teal
-          "primary-light": "#2a8a9e",
-          "primary-dark": "#0f4a57",
-          "primary-glow": "rgba(27, 107, 123, 0.15)", // Subtle glow effect
+          primary: "#004E5A", // Brand teal
+          "primary-light": "#0A7A8C",
+          "primary-dark": "#003841",
+          "primary-glow": "rgba(0, 78, 90, 0.15)", // Subtle glow effect
           secondary: "#d87e52", // Coral/orange accent
           "secondary-light": "#e89968",
           "secondary-dark": "#c66838",
@@ -18,9 +18,9 @@ module.exports = {
         },
         // Dark mode background colors
         background: {
-          primary: "#111827", // Main dark background (neutral-900)
-          card: "#1f2937", // Card background (neutral-800)
-          elevated: "#374151", // Elevated/hover state (neutral-700)
+          primary: "#0B1B22", // Main dark background (brand-tinted)
+          card: "#132730", // Card background
+          elevated: "#1A3641", // Elevated/hover state
         },
         // Dark mode text colors
         text: {
@@ -47,9 +47,9 @@ module.exports = {
           css: {
             color: "#374151",
             a: {
-              color: "#1b6b7b",
+              color: "#004E5A",
               "&:hover": {
-                color: "#2a8a9e",
+                color: "#0A7A8C",
               },
             },
             strong: {
@@ -89,7 +89,7 @@ module.exports = {
         xl: "0 20px 25px -5px rgba(0, 0, 0, 0.08)",
         card: "0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1)", // Card elevation
         "card-hover": "0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.15)", // Elevated card
-        "teal-glow": "0 0 20px rgba(27, 107, 123, 0.3)", // Teal glow effect
+        "teal-glow": "0 0 20px rgba(0, 78, 90, 0.3)", // Teal glow effect
       },
       transitionTimingFunction: {
         smooth: "cubic-bezier(0.4, 0, 0.2, 1)",

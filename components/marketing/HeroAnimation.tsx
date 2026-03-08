@@ -9,7 +9,7 @@ export function HeroAnimation() {
           className="absolute inset-0"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(27, 107, 123, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(27, 107, 123, 0.1) 1px, transparent 1px)",
+              "linear-gradient(rgba(0, 78, 90, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 78, 90, 0.1) 1px, transparent 1px)",
             backgroundSize: "50px 50px",
           }}
         />
@@ -42,9 +42,9 @@ export function HeroAnimation() {
         </div>
       </div>
 
-      <div className="absolute bottom-[30%] right-[15%] h-12 w-12 animate-float-delayed rounded-full bg-teal-500/20 backdrop-blur-sm">
+      <div className="absolute bottom-[30%] right-[15%] h-12 w-12 animate-float-delayed rounded-full bg-brand-primary/20 backdrop-blur-sm">
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="h-2.5 w-2.5 rounded-full bg-teal-400" />
+          <div className="h-2.5 w-2.5 rounded-full bg-brand-primary-light" />
         </div>
       </div>
 
@@ -63,7 +63,7 @@ export function HeroAnimation() {
           y1="25%"
           x2="45%"
           y2="45%"
-          stroke="rgba(27, 107, 123, 0.3)"
+          stroke="rgba(0, 78, 90, 0.3)"
           strokeWidth="2"
           strokeDasharray="5,5"
           className="animate-pulse"
@@ -84,7 +84,7 @@ export function HeroAnimation() {
           y1="70%"
           x2="50%"
           y2="55%"
-          stroke="rgba(27, 107, 123, 0.3)"
+          stroke="rgba(0, 78, 90, 0.3)"
           strokeWidth="2"
           strokeDasharray="5,5"
           className="animate-pulse"
