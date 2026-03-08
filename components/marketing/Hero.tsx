@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { cn } from "@/lib/cn";
 import { Container } from "@/components/layout";
-import { Eyebrow } from "@/components/ui";
+import { Button, Eyebrow } from "@/components/ui";
 import { HeroAnimation } from "./HeroAnimation";
 
 interface HeroProps {
@@ -20,7 +20,7 @@ interface HeroProps {
 }
 
 /**
- * HeroSection is the lead conversion block (dark mode).
+ * HeroSection is the lead conversion block (light theme with subtle depth).
  */
 export function HeroSection({
   title,
@@ -31,9 +31,14 @@ export function HeroSection({
   className,
 }: HeroProps) {
   return (
-    <section className={cn("relative overflow-hidden pt-24 lg:pt-32", className)}>
+    <section
+      className={cn(
+        "relative overflow-hidden bg-background-card pt-24 pb-8 lg:pt-32 lg:pb-12",
+        className,
+      )}
+    >
       <Container size="xl">
-        <div className="rounded-card-lg border border-neutral-700/70 bg-background-card/70 p-6 shadow-card backdrop-blur-sm sm:p-8 lg:p-10">
+        <div className="rounded-card-lg border border-neutral-200 bg-white p-6 shadow-lg sm:p-8 lg:p-10">
           <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
             <div className="max-w-2xl">
               {eyebrow && (
@@ -41,7 +46,7 @@ export function HeroSection({
                   <Eyebrow>{eyebrow}</Eyebrow>
                 </div>
               )}
-              <h1 className="mb-6 text-4xl font-semibold tracking-tight text-text-primary sm:text-5xl lg:text-6xl">
+              <h1 className="mb-6 text-4xl font-semibold tracking-tight text-text-primary sm:text-5xl">
                 {title}
               </h1>
               {description && (
@@ -51,20 +56,14 @@ export function HeroSection({
               {(cta || secondaryCta) && (
                 <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center">
                   {cta && (
-                    <a
-                      href={cta.href}
-                      className="inline-flex items-center justify-center rounded-card bg-brand-primary px-8 py-3.5 text-base font-semibold text-white shadow-card transition-all duration-200 hover:bg-brand-primary-light hover:shadow-card-hover"
-                    >
+                    <Button variant="primary" size="lg" href={cta.href}>
                       {cta.label}
-                    </a>
+                    </Button>
                   )}
                   {secondaryCta && (
-                    <a
-                      href={secondaryCta.href}
-                      className="inline-flex items-center justify-center rounded-card border-2 border-neutral-600 px-8 py-3.5 text-base font-semibold text-text-primary transition-all duration-200 hover:border-neutral-500 hover:bg-background-card"
-                    >
+                    <Button variant="secondary" size="lg" href={secondaryCta.href}>
                       {secondaryCta.label}
-                    </a>
+                    </Button>
                   )}
                 </div>
               )}

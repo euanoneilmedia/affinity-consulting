@@ -33,13 +33,13 @@ export function Button({
 
   const variants = {
     primary:
-      "bg-brand-primary text-white hover:bg-brand-primary-light active:bg-brand-primary-dark disabled:opacity-50 disabled:cursor-not-allowed",
+      "bg-brand-primary text-white hover:bg-brand-primary-light active:bg-brand-primary-dark shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed",
     secondary:
-      "border-2 border-brand-secondary bg-transparent text-brand-secondary hover:bg-brand-secondary hover:text-white disabled:opacity-50 disabled:cursor-not-allowed",
+      "border-2 border-brand-secondary bg-transparent text-brand-secondary hover:bg-brand-secondary hover:text-white shadow-sm disabled:opacity-50 disabled:cursor-not-allowed",
     outline:
-      "border-2 border-neutral-300 bg-transparent text-neutral-900 hover:border-neutral-400 hover:bg-neutral-50 disabled:opacity-50 disabled:cursor-not-allowed",
+      "border-2 border-neutral-300 bg-transparent text-text-primary hover:border-brand-primary hover:text-brand-primary disabled:opacity-50 disabled:cursor-not-allowed",
     ghost:
-      "bg-transparent text-neutral-700 hover:bg-neutral-100 disabled:opacity-50 disabled:cursor-not-allowed",
+      "bg-transparent text-text-secondary hover:bg-neutral-100 disabled:opacity-50 disabled:cursor-not-allowed",
   };
 
   const sizes = {

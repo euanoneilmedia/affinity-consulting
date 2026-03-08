@@ -41,12 +41,12 @@ const trustedLogos: TrustedLogo[] = [
  */
 export function TrustedBySection() {
   return (
-    <Section variant="dark" size="sm" className="sm:py-10">
+    <Section variant="light" size="sm" className="sm:py-10">
       <Container size="xl">
         <div className="relative overflow-hidden">
           {/* Gradient overlays for fade effect */}
-          <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-16 bg-gradient-to-r from-background-primary to-transparent" />
-          <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-16 bg-gradient-to-l from-background-primary to-transparent" />
+          <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-16 bg-gradient-to-r from-background-card to-transparent" />
+          <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-16 bg-gradient-to-l from-background-card to-transparent" />
 
           {/* Ticker container */}
           <div className="flex animate-scroll-left items-center">
@@ -61,7 +61,8 @@ export function TrustedBySection() {
                   alt={logo.name}
                   width={logo.width}
                   height={logo.height}
-                  className="max-h-10 w-auto object-contain opacity-70 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0 sm:max-h-12"
+                  className="max-h-10 w-auto object-contain opacity-60 grayscale transition duration-300 hover:opacity-80 sm:max-h-12"
+                  style={{ filter: "grayscale(1) opacity(0.7)" }}
                 />
               </div>
             ))}
@@ -76,7 +77,8 @@ export function TrustedBySection() {
                   alt={logo.name}
                   width={logo.width}
                   height={logo.height}
-                  className="max-h-10 w-auto object-contain opacity-70 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0 sm:max-h-12"
+                  className="max-h-10 w-auto object-contain opacity-60 grayscale transition duration-300 hover:opacity-80 sm:max-h-12"
+                  style={{ filter: "grayscale(1) opacity(0.7)" }}
                 />
               </div>
             ))}

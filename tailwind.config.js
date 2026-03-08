@@ -4,29 +4,60 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      fontFamily: {
+        sans: [
+          "var(--font-inter)",
+          "ui-sans-serif",
+          "system-ui",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "Roboto",
+          "Helvetica Neue",
+          "Arial",
+          "Noto Sans",
+          "sans-serif",
+        ],
+      },
       colors: {
-        // Brand colors extracted from Affinity Consulting logo
+        // Brand colors - healthcare-appropriate teal palette
         brand: {
-          primary: "#004E5A", // Brand teal
-          "primary-light": "#0A7A8C",
-          "primary-dark": "#003841",
-          "primary-glow": "rgba(0, 78, 90, 0.15)", // Subtle glow effect
-          secondary: "#d87e52", // Coral/orange accent
-          "secondary-light": "#e89968",
-          "secondary-dark": "#c66838",
-          "secondary-glow": "rgba(216, 126, 82, 0.15)", // Subtle coral glow
+          primary: "#1E5B60", // Softer healthcare teal
+          "primary-light": "#3FA9A8", // Highlight teal
+          "primary-dark": "#154C50", // Deeper teal for emphasis
+          secondary: "#F2994A", // Warm orange accent
+          "secondary-light": "#FEA048", // Lighter peachy orange
+          "secondary-dark": "#d87e52", // Coral for depth
         },
-        // Dark mode background colors
+        // Light theme background colors
         background: {
-          primary: "#0B1B22", // Main dark background (brand-tinted)
-          card: "#132730", // Card background
-          elevated: "#1A3641", // Elevated/hover state
+          primary: "#FDFCFA", // Soft warm white (cream-tinted)
+          card: "#F5F9F9", // Very light teal-gray
+          elevated: "#FFFFFF", // Pure white for elevated cards
+          accent: "#0E3A3D", // Mid-tone teal for dark sections
+          "accent-card": "#154C50", // Card background in dark sections
         },
-        // Dark mode text colors
+        // Light theme text colors
         text: {
-          primary: "#f9fafb", // White headings (neutral-50)
-          secondary: "#d1d5db", // Light gray body text (neutral-300)
-          muted: "#9ca3af", // Muted text (neutral-400)
+          primary: "#0E3A3D", // Deep teal for headings
+          secondary: "#4b5563", // Mid-gray for body text (neutral-600)
+          muted: "#6b7280", // Light gray for secondary text (neutral-500)
+        },
+        // Accent colors for special use
+        accent: {
+          cream: "#F3EBD8", // Soft cream for warm sections
+          teal: {
+            50: "#F0F9F9",
+            100: "#D9F0F0",
+            200: "#B3E1E1",
+            300: "#8DD2D2",
+            400: "#67C3C3",
+            500: "#3FA9A8", // Primary light
+            600: "#1E5B60", // Primary
+            700: "#154C50", // Primary dark
+            800: "#0E3A3D", // Accent background
+            900: "#082528",
+          },
         },
         // Neutral palette
         neutral: {
@@ -83,13 +114,12 @@ module.exports = {
         full: "9999px",
       },
       boxShadow: {
-        sm: "0 1px 2px 0 rgba(0, 0, 0, 0.04)",
-        md: "0 4px 6px -1px rgba(0, 0, 0, 0.08)",
-        lg: "0 10px 15px -3px rgba(0, 0, 0, 0.08)",
-        xl: "0 20px 25px -5px rgba(0, 0, 0, 0.08)",
-        card: "0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1)", // Card elevation
-        "card-hover": "0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.15)", // Elevated card
-        "teal-glow": "0 0 20px rgba(0, 78, 90, 0.3)", // Teal glow effect
+        sm: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+        md: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+        lg: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+        xl: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+        card: "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)", // Subtle card elevation
+        "card-hover": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)", // Elevated card on hover
       },
       transitionTimingFunction: {
         smooth: "cubic-bezier(0.4, 0, 0.2, 1)",

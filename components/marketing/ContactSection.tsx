@@ -2,7 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import { Container, Section } from "@/components/layout";
-import { DarkCard, Eyebrow } from "@/components/ui";
+import { Button, Eyebrow } from "@/components/ui";
 
 /**
  * Contact form component
@@ -49,7 +49,7 @@ export function ContactSection() {
   };
 
   return (
-    <Section variant="light" id="contact">
+    <Section variant="white" id="contact">
       <Container size="md">
         <div className="text-center">
           <div className="mb-3">
@@ -62,7 +62,7 @@ export function ContactSection() {
             Tell us a little about your challenge and we will respond with next steps.
           </p>
 
-          <DarkCard className="mx-auto max-w-xl border-neutral-700 text-left">
+          <div className="mx-auto max-w-xl rounded-card border border-neutral-200 bg-white p-6 shadow-lg text-left sm:p-8">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="mb-2 block text-sm font-medium text-text-primary">
@@ -73,7 +73,7 @@ export function ContactSection() {
                   id="name"
                   name="name"
                   required
-                  className="w-full rounded-card border border-neutral-600 bg-background-primary px-4 py-3 text-text-primary placeholder-text-muted transition-colors focus:border-brand-primary focus:outline-none"
+                  className="w-full rounded-card border border-neutral-300 bg-white px-4 py-3 text-text-primary placeholder-text-muted transition-colors focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/20"
                   placeholder="Your name"
                 />
               </div>
@@ -87,7 +87,7 @@ export function ContactSection() {
                   id="email"
                   name="email"
                   required
-                  className="w-full rounded-card border border-neutral-600 bg-background-primary px-4 py-3 text-text-primary placeholder-text-muted transition-colors focus:border-brand-primary focus:outline-none"
+                  className="w-full rounded-card border border-neutral-300 bg-white px-4 py-3 text-text-primary placeholder-text-muted transition-colors focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/20"
                   placeholder="you@example.com"
                 />
               </div>
@@ -104,22 +104,24 @@ export function ContactSection() {
                   name="message"
                   required
                   rows={6}
-                  className="w-full rounded-card border border-neutral-600 bg-background-primary px-4 py-3 text-text-primary placeholder-text-muted transition-colors focus:border-brand-primary focus:outline-none"
+                  className="w-full rounded-card border border-neutral-300 bg-white px-4 py-3 text-text-primary placeholder-text-muted transition-colors focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/20"
                   placeholder="Tell us about your project..."
                 />
               </div>
 
-              <button
+              <Button
                 type="submit"
+                variant="primary"
+                size="md"
                 disabled={isSubmitting}
-                className="w-full rounded-card bg-brand-primary px-6 py-3 text-sm font-medium text-white transition-colors duration-200 hover:bg-brand-primary-light disabled:cursor-not-allowed disabled:opacity-50"
+                className="w-full"
               >
                 {isSubmitting ? "Sending..." : submitted ? "Thank you!" : "Send message"}
-              </button>
+              </Button>
 
-              {errorMessage && <p className="text-sm text-red-300">{errorMessage}</p>}
+              {errorMessage && <p className="text-sm text-red-500">{errorMessage}</p>}
             </form>
-          </DarkCard>
+          </div>
         </div>
       </Container>
     </Section>

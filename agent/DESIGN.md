@@ -21,9 +21,9 @@ All colors are derived from the Affinity Consulting logo, creating a naturally h
 #### Primary: Deep Teal
 
 ```
-Brand Primary: #1b6b7b
-Light variant: #2a8a9e
-Dark variant: #0f4a57
+Brand Primary: #004E5A
+Light variant: #0A7A8C
+Dark variant: #003841
 ```
 
 **Usage:**
@@ -35,22 +35,24 @@ Dark variant: #0f4a57
 - Links in body text
 - **Avoid:** Background fills (unless full-width)
 
-#### Secondary: Coral/Orange
+#### Secondary: Peachy Orange
 
 ```
-Brand Secondary: #d87e52
+Secondary CTA: #FEA048
+Brand Secondary (coral): #d87e52
 Light variant: #e89968
 Dark variant: #c66838
 ```
 
 **Usage:**
 
-- Secondary CTAs
+- Secondary CTAs (exploration, alternative paths)
 - Emphasis and highlights
 - Icons on dark backgrounds
-- Hover states on primary actions
 - Accent borders
 - **Avoid:** Large background areas
+
+**Note:** #FEA048 is used specifically for secondary button outlines and text to create strong visual distinction from primary teal.
 
 ### Neutral Palette
 
@@ -240,53 +242,156 @@ Large (modals future) 0 20px 25px rgba(0, 0, 0, 0.08)
 
 ## Button Styles
 
+**Implementation:** All buttons use the `<Button>` component from `@/components/ui/Button.tsx`. Never hardcode button styles.
+
+### Button Variant Usage & Hierarchy
+
+Buttons establish a clear visual hierarchy that guides users through their journey:
+
+1. **Primary (Teal)** - Main conversion actions
+2. **Secondary (Orange)** - Alternative/exploratory actions
+3. **Outline (Gray)** - Tertiary/utility actions
+4. **Ghost** - Low-emphasis actions
+
 ### Primary Button
 
+**Usage:** Main conversion CTAs that drive business outcomes
+
 ```
-Background: Brand Primary (#1b6b7b)
+Background: Brand Primary (#004E5A)
 Color: White
 Padding: py-3 px-6 (medium) or py-4 px-8 (large)
 Border: None
-Hover: Brand Primary Light (#2a8a9e)
-Active: Brand Primary Dark (#0f4a57)
-Disabled: Opacity 50%
+Hover: Brand Primary Light (#0A7A8C) with white text
+Active: Brand Primary Dark (#003841)
+Disabled: Opacity 50%, cursor not-allowed
+```
+
+**Examples:**
+- "Start a conversation" (Hero CTA)
+- "Send a message" (CTA Section)
+- "Send message" (Contact form submit)
+- "Get in Touch" (Header, always visible)
+
+**Component Usage:**
+```tsx
+<Button variant="primary" size="lg" href="#contact">
+  Start a conversation
+</Button>
 ```
 
 ### Secondary Button
 
+**Usage:** Secondary CTAs for exploration, learning, or alternative paths
+
 ```
 Background: Transparent
-Border: 2px solid Brand Secondary (#d87e52)
-Color: Brand Secondary
-Padding: py-3 px-6
-Hover: Background becomes Brand Secondary, text white
+Border: 2px solid #FEA048 (peachy orange)
+Color: #FEA048
+Padding: py-3 px-6 (medium) or py-4 px-8 (large)
+Hover: Background #FEA048, text white
+Disabled: Opacity 50%, cursor not-allowed
 ```
 
+**Examples:**
+- "Explore services" (Hero secondary CTA)
+- "View approach" (CTA Section secondary)
+- Navigation to non-conversion pages
+
+**Component Usage:**
+```tsx
+<Button variant="secondary" size="lg" href="#services">
+  Explore services
+</Button>
+```
+
+**Design Rationale:**
+- Orange (#FEA048) provides strong contrast against teal primary
+- Creates clear visual distinction between conversion and exploration
+- Maintains brand warmth while not competing with primary CTAs
+
 ### Outline Button
+
+**Usage:** Tertiary actions, utility buttons, less emphasis
 
 ```
 Background: Transparent
 Border: 2px solid Neutral 300
 Color: Neutral 900
+Padding: py-3 px-6
 Hover: Background Neutral 50, Border Neutral 400
+Disabled: Opacity 50%, cursor not-allowed
+```
+
+**Examples:**
+- Cancel actions
+- Alternative navigation paths
+- Filter/sort controls (future use)
+
+**Component Usage:**
+```tsx
+<Button variant="outline" size="md" href="/terms">
+  View Terms
+</Button>
 ```
 
 ### Ghost Button
+
+**Usage:** Very low-emphasis actions, inline text-like buttons
 
 ```
 Background: Transparent
 Border: None
 Color: Neutral 700
 Hover: Background Neutral 100
+Disabled: Opacity 50%, cursor not-allowed
+```
+
+**Examples:**
+- Inline dismissible actions
+- Secondary navigation in complex UIs (future use)
+- "Learn more" links in dense content
+
+**Component Usage:**
+```tsx
+<Button variant="ghost" size="sm">
+  Dismiss
+</Button>
 ```
 
 ### Button Sizing
 
 ```
-Small (sm):  px-4 py-2, text-sm
-Medium (md): px-6 py-3, text-base (default)
-Large (lg):  px-8 py-4, text-lg
+Small (sm):  px-4 py-2, text-sm  (Header, compact spaces)
+Medium (md): px-6 py-3, text-base (CTA sections, forms)
+Large (lg):  px-8 py-4, text-lg   (Hero, high-emphasis CTAs)
 ```
+
+### Button Best Practices
+
+**DO:**
+- ✅ Use Button component for all CTAs
+- ✅ Match variant to user journey stage (conversion = primary, exploration = secondary)
+- ✅ Use semantic sizes (lg for hero, md for forms, sm for navigation)
+- ✅ Provide clear, action-oriented labels ("Start a conversation", not "Click here")
+- ✅ Use `href` prop for links, `type="submit"` for forms
+
+**DON'T:**
+- ❌ Hardcode button styles inline or in component files
+- ❌ Use primary buttons for every action (dilutes impact)
+- ❌ Use vague labels ("Submit", "Go", "Click")
+- ❌ Mix button styles within the same CTA group
+- ❌ Skip focus states (accessibility requirement)
+
+### Accessibility
+
+All buttons maintain WCAG AA contrast ratios:
+- Primary (teal on white text): ✅ Pass
+- Secondary (orange border/text): ✅ Pass (verify on dark backgrounds)
+- Outline (gray border/text): ✅ Pass
+- Ghost (gray text): ✅ Pass
+
+Focus states use visible outline with brand-primary color and 2px offset.
 
 ## Card Styles
 

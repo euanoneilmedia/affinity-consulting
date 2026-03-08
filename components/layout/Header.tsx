@@ -21,7 +21,7 @@ const navLinks: NavLink[] = [
  */
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-neutral-800/50 bg-background-primary/95 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 border-b border-neutral-200 bg-white/95 backdrop-blur-sm shadow-sm">
       <div className="container-max">
         <nav className="flex items-center justify-between py-4 sm:py-6">
           {/* Logo */}
@@ -42,7 +42,7 @@ export function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-text-secondary transition-colors hover:text-brand-primary-light"
+                className="text-sm font-medium text-text-secondary transition-colors hover:text-brand-primary"
               >
                 {link.label}
               </a>

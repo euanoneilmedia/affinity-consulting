@@ -151,7 +151,7 @@ export default function Home() {
         title={
           <>
             Designing and{" "}
-            <span className="bg-gradient-to-r from-brand-primary-light to-brand-primary bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand-primary to-brand-primary-light bg-clip-text text-transparent">
               delivering better
             </span>{" "}
             health and care.
@@ -180,7 +180,7 @@ export default function Home() {
 
       <Section id="about" variant="white" size="sm">
         <Container size="xl">
-          <DarkCard className="grid gap-10 border-neutral-700 lg:grid-cols-[1fr_1fr] lg:gap-14">
+          <div className="grid gap-10 rounded-card-lg border border-neutral-200 bg-white p-8 shadow-lg lg:grid-cols-[1fr_1fr] lg:gap-14 lg:p-10">
             <div>
               <div className="mb-3">
                 <Eyebrow>Who We Are</Eyebrow>
@@ -199,7 +199,7 @@ export default function Home() {
                 constraints and design practical solutions that can be delivered and sustained.
               </p>
             </div>
-          </DarkCard>
+          </div>
         </Container>
       </Section>
 
@@ -218,17 +218,17 @@ export default function Home() {
         items={trustItems}
       />
 
-      <Section id="approach" variant="dark" size="sm" className="text-white">
+      <Section id="approach" variant="dark" size="sm">
         <Container size="xl">
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
-            <DarkCard className="border-neutral-700">
+            <DarkCard className="border-neutral-600">
               <div className="mb-3">
-                <Eyebrow variant="accent">Our Approach</Eyebrow>
+                <Eyebrow variant="dark">Our Approach</Eyebrow>
               </div>
-              <h2 className="text-3xl font-semibold tracking-tight text-text-primary sm:text-4xl">
+              <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
                 Structured, collaborative, and delivery-focused.
               </h2>
-              <p className="mt-5 max-w-md text-base leading-8 text-text-secondary">
+              <p className="mt-5 max-w-md text-base leading-8 text-neutral-200">
                 We combine clinical, operational, digital, and leadership perspectives to co-create
                 solutions that are realistic and resilient.
               </p>
@@ -249,18 +249,16 @@ export default function Home() {
                 },
               ].map((step, index) => (
                 <li key={step.title}>
-                  <DarkCard hover className="border-neutral-700">
+                  <DarkCard hover className="border-neutral-600">
                     <div className="mb-2">
-                      <Eyebrow className="!bg-background-primary !text-text-muted">
+                      <Eyebrow variant="dark" className="!bg-neutral-700 !text-neutral-300">
                         {String(index + 1).padStart(2, "0")}
                       </Eyebrow>
                     </div>
-                    <h3 className="mb-2 text-xl font-semibold tracking-tight text-text-primary">
+                    <h3 className="mb-2 text-xl font-semibold tracking-tight text-white">
                       {step.title}
                     </h3>
-                    <p className="text-sm leading-7 text-text-secondary sm:text-base">
-                      {step.body}
-                    </p>
+                    <p className="text-sm leading-7 text-neutral-200 sm:text-base">{step.body}</p>
                   </DarkCard>
                 </li>
               ))}

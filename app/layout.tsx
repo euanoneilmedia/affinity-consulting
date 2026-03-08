@@ -1,9 +1,17 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import { baseMetadata } from "@/lib/metadata";
 import { createDefaultOrganizationSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site";
 import { Header, Footer } from "@/components/layout";
 import "@/styles/globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 export const metadata: Metadata = baseMetadata;
 
@@ -26,8 +34,8 @@ const organizationSchema = createDefaultOrganizationSchema({
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="dark">
-      <body>
+    <html lang="en" className={inter.variable}>
+      <body className={inter.className}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}

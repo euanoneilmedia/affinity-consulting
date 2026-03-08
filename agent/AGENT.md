@@ -138,8 +138,9 @@ This hierarchy improves scannability and conversion intent while keeping the pag
 
 All colors come from the design system in `tailwind.config.js`:
 
-- **Brand Primary:** `#1b6b7b` (deep teal) - Use for CTAs, links, highlights
+- **Brand Primary:** `#004E5A` (deep teal) - Use for CTAs, links, highlights
 - **Brand Secondary:** `#d87e52` (coral) - Use for accents, emphasis
+- **Secondary CTA:** `#FEA048` (peachy orange) - Use for secondary button outlines
 - **Neutrals:** Full scale from 50 to 900 for text, borders, backgrounds
 
 ### Using Colors
@@ -150,6 +151,49 @@ All colors come from the design system in `tailwind.config.js`:
 <button className="border-2 border-brand-secondary">Secondary</button>
 <p className="text-neutral-600">Body text</p>
 ```
+
+### Buttons
+
+**Always use the Button component** (`@/components/ui/Button`) for all CTAs and clickable actions. Never hardcode button styles.
+
+```tsx
+import { Button } from "@/components/ui";
+
+// Primary conversion CTA (teal solid)
+<Button variant="primary" size="lg" href="#contact">
+  Start a conversation
+</Button>
+
+// Secondary exploration CTA (orange outline)
+<Button variant="secondary" size="lg" href="#services">
+  Explore services
+</Button>
+
+// Form submit
+<Button variant="primary" type="submit">
+  Send message
+</Button>
+```
+
+**Button Variants & Usage:**
+
+- `primary` - Main conversion actions (contact, submit forms) - **Teal solid background**
+- `secondary` - Exploratory/alternative paths (browse, learn more) - **Orange outline**
+- `outline` - Tertiary actions (less emphasis) - Gray outline  
+- `ghost` - Very low-emphasis actions - Transparent with hover
+
+**Button Sizes:**
+
+- `sm` - Header navigation, compact spaces
+- `md` - Forms, CTA sections (default)
+- `lg` - Hero section, high-emphasis CTAs
+
+**Important:**
+
+- ❌ Don't hardcode button classes in component files
+- ✅ Use Button component with appropriate variant based on user journey
+- ✅ Match size to context (lg for hero, md for forms, sm for nav)
+- ✅ Use clear, action-oriented labels ("Start a conversation", not "Click here")
 
 ### Typography
 

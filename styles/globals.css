@@ -28,7 +28,7 @@
   }
 
   h1 {
-    @apply text-4xl font-semibold tracking-tight text-text-primary sm:text-5xl lg:text-6xl;
+    @apply text-4xl font-semibold tracking-tight text-text-primary sm:text-5xl;
   }
 
   h2 {
@@ -56,7 +56,7 @@
   }
 
   a {
-    @apply text-brand-primary-light transition-colors duration-200 hover:text-brand-primary focus-visible-ring;
+    @apply text-brand-primary transition-colors duration-200 hover:text-brand-primary-light focus-visible-ring;
   }
 }
 
@@ -67,7 +67,7 @@
   }
 
   .btn-primary {
-    @apply btn bg-brand-primary text-white hover:bg-brand-primary-light active:bg-brand-primary-dark;
+    @apply btn bg-brand-primary text-white hover:bg-brand-primary-light active:bg-brand-primary-dark shadow-sm hover:shadow-md;
   }
 
   .btn-secondary {
@@ -75,11 +75,11 @@
   }
 
   .btn-outline {
-    @apply btn border-2 border-neutral-600 bg-transparent text-text-primary hover:border-neutral-500 hover:bg-neutral-800;
+    @apply btn border-2 border-neutral-300 bg-transparent text-text-primary hover:border-brand-primary hover:text-brand-primary;
   }
 
   .btn-ghost {
-    @apply btn bg-transparent text-text-secondary hover:bg-background-card;
+    @apply btn bg-transparent text-text-secondary hover:bg-neutral-100;
   }
 
   .btn-sm {
@@ -94,11 +94,11 @@
 /* Cards */
 @layer components {
   .card {
-    @apply rounded-card border border-neutral-700 bg-background-card p-6 shadow-card transition-all duration-200;
+    @apply rounded-card border border-neutral-200 bg-white p-6 shadow-card transition-all duration-200;
   }
 
   .card-elevated {
-    @apply rounded-card-lg bg-background-card p-8 shadow-card transition-all duration-200 hover:shadow-card-hover;
+    @apply rounded-card-lg bg-white p-8 shadow-card transition-all duration-200 hover:shadow-card-hover hover:-translate-y-1;
   }
 }
 
@@ -121,11 +121,15 @@
   }
 
   .section-white {
-    @apply bg-background-card;
+    @apply bg-white;
+  }
+
+  .section-cream {
+    @apply bg-accent-cream;
   }
 
   .section-dark {
-    @apply bg-background-primary;
+    @apply bg-background-accent text-white;
   }
 }
 
@@ -151,21 +155,6 @@
     }
   }
 
-  @keyframes tealDrift {
-    0% {
-      transform: translate3d(0, 0, 0) scale(1);
-      opacity: 0.28;
-    }
-    50% {
-      transform: translate3d(18px, -14px, 0) scale(1.05);
-      opacity: 0.4;
-    }
-    100% {
-      transform: translate3d(0, 0, 0) scale(1);
-      opacity: 0.28;
-    }
-  }
-
   @keyframes scrollLeft {
     from {
       transform: translateX(0);
@@ -183,30 +172,13 @@
     animation: slideUp 0.5s ease-out;
   }
 
-  .animate-teal-drift {
-    animation: tealDrift 12s ease-in-out infinite;
-  }
-
-  .animate-teal-drift-delayed {
-    animation: tealDrift 15s ease-in-out infinite;
-    animation-delay: 1.4s;
-  }
-
   .animate-scroll-left {
     animation: scrollLeft 30s linear infinite;
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .animate-teal-drift,
-    .animate-teal-drift-delayed,
-    .animate-float,
-    .animate-float-delayed,
-    .animate-pulse-ring,
-    .animate-rotate-slow {
-      animation: none;
-      opacity: 0.3;
-    }
-
+    .animate-fade-in,
+    .animate-slide-up,
     .animate-scroll-left {
       animation: none;
     }

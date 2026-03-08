@@ -18,9 +18,9 @@ interface SectionProps {
  */
 export function Section({ children, className, variant = "white", size = "md", id }: SectionProps) {
   const variants = {
-    light: "bg-background-primary",
-    white: "bg-background-primary",
-    dark: "bg-background-primary",
+    light: "bg-background-card",
+    white: "bg-white",
+    dark: "bg-background-accent text-white",
   };
 
   const sizes = {

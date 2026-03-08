@@ -55,14 +55,12 @@ export function MarketingCard({
   return (
     <article
       className={cn(
-        "group relative flex h-full flex-col overflow-hidden rounded-card border border-neutral-700/90 bg-background-card p-6 shadow-card transition-all duration-200 md:p-8",
-        hover && "hover:-translate-y-1 hover:shadow-card-hover",
+        "group relative flex h-full flex-col overflow-hidden rounded-card border border-neutral-200 bg-white p-6 shadow-card transition-all duration-200 md:p-8",
+        hover && "hover:-translate-y-1 hover:shadow-lg",
         className,
       )}
     >
-      {variant === "service" && (
-        <div className="pointer-events-none absolute inset-0 z-0 rounded-card bg-gradient-to-br from-brand-primary/10 via-transparent to-brand-secondary/10 opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
-      )}
+      {variant === "service" && <div className="pointer-events-none absolute inset-0 z-0" />}
 
       {variant === "stat" ? (
         <>
@@ -107,7 +105,7 @@ export function MarketingCard({
               )}
 
               {badgeLabel && (
-                <span className="inline-flex items-center rounded-full border border-neutral-600 px-4 py-1 text-sm font-medium text-text-secondary">
+                <span className="inline-flex items-center rounded-full border border-neutral-300 bg-neutral-50 px-4 py-1 text-sm font-medium text-text-secondary">
                   {badgeLabel}
                 </span>
               )}
@@ -138,7 +136,7 @@ export function MarketingCard({
             <div
               className={cn(
                 "relative z-10 mt-6",
-                shouldShowFooterDivider && "border-t border-neutral-700 pt-5",
+                shouldShowFooterDivider && "border-t border-neutral-200 pt-5",
               )}
             >
               <p className="text-sm leading-7 text-text-muted">{footerText}</p>

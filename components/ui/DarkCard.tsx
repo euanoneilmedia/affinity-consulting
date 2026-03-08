@@ -9,7 +9,8 @@ interface DarkCardProps {
 }
 
 /**
- * DarkCard component for card-based dark layout.
+ * DarkCard component for card-based layout in dark accent sections.
+ * Used in footer and other dark-background sections.
  * Provides consistent card styling with elevation and hover states.
  */
 export function DarkCard({
@@ -21,12 +22,11 @@ export function DarkCard({
   return (
     <div
       className={cn(
-        "rounded-card p-6 shadow-card transition-all duration-200 md:p-8",
-        variant === "default" && "border border-neutral-700 bg-background-card",
-        variant === "elevated" && "bg-background-card shadow-card-hover",
-        variant === "gradient" &&
-          "bg-gradient-to-br from-brand-primary/20 to-brand-secondary/20 backdrop-blur-sm",
-        hover && "hover:-translate-y-1 hover:shadow-card-hover",
+        "rounded-card p-6 shadow-md transition-all duration-200 md:p-8",
+        variant === "default" && "border border-neutral-600 bg-background-accent-card",
+        variant === "elevated" && "bg-background-accent-card shadow-lg",
+        variant === "gradient" && "bg-background-accent-card border border-neutral-600",
+        hover && "hover:-translate-y-1 hover:shadow-lg",
         className,
       )}
     >

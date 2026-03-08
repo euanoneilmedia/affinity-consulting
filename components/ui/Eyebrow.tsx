@@ -14,15 +14,15 @@ export function Eyebrow({ children, className, variant = "default" }: EyebrowPro
   return (
     <span
       className={cn(
-        "inline-block rounded-md border border-brand-primary/20 bg-white/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] shadow-[0_0_14px_rgba(10,122,140,0.14)] backdrop-blur-sm transition-[box-shadow,border-color,background-color,color] duration-200 hover:shadow-[0_0_22px_rgba(10,122,140,0.30)]",
+        "inline-block rounded-md border px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] transition-colors duration-200",
         {
-          "border-brand-primary/30 bg-white/10 text-brand-primary-light shadow-[0_0_16px_rgba(10,122,140,0.18)] hover:border-brand-primary/50 hover:bg-white/15 hover:shadow-[0_0_24px_rgba(10,122,140,0.34)]":
+          "border-brand-primary/30 bg-brand-primary/5 text-brand-primary hover:bg-brand-primary/10":
             variant === "default",
-          "border-brand-primary/25 bg-white/10 text-white shadow-[0_0_14px_rgba(10,122,140,0.12)] hover:border-brand-primary/45 hover:bg-white/15 hover:shadow-[0_0_22px_rgba(10,122,140,0.30)]":
+          "border-neutral-300 bg-neutral-50 text-text-secondary hover:bg-neutral-100":
             variant === "light",
-          "border-brand-primary/25 bg-neutral-900/20 text-neutral-300 shadow-[0_0_12px_rgba(10,122,140,0.12)] hover:border-brand-primary/45 hover:bg-neutral-900/30 hover:shadow-[0_0_20px_rgba(10,122,140,0.28)]":
+          "border-neutral-600 bg-neutral-700 text-neutral-200 hover:bg-neutral-600":
             variant === "dark",
-          "border-brand-secondary/30 bg-brand-secondary/10 text-brand-secondary shadow-[0_0_14px_rgba(216,126,82,0.12)] hover:border-brand-secondary/50 hover:bg-brand-secondary/15 hover:shadow-[0_0_22px_rgba(216,126,82,0.28)]":
+          "border-brand-secondary/30 bg-brand-secondary/5 text-brand-secondary hover:bg-brand-secondary/10":
             variant === "accent",
         },
         className,
