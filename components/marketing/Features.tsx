@@ -62,6 +62,7 @@ export function ServicesSection({
               description={service.description}
               footerText={service.outcome}
               numberTone="muted"
+              hoverStyle="boldTeal"
               className="min-h-[320px]"
             />
           ))}

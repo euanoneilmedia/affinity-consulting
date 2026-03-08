@@ -21,6 +21,7 @@ interface MarketingCardProps {
   numberStyle?: NumberStyle;
   contentAlign?: ContentAlign;
   hover?: boolean;
+  hoverStyle?: "default" | "boldTeal";
   className?: string;
 }
 
@@ -41,6 +42,7 @@ export function MarketingCard({
   numberStyle = variant === "capability" ? "circle" : "text",
   contentAlign = "bottom",
   hover = true,
+  hoverStyle = "default",
   className,
 }: MarketingCardProps) {
   const toneClasses = {
@@ -52,15 +54,27 @@ export function MarketingCard({
   const shouldShowFooterDivider =
     showFooterDivider !== undefined ? showFooterDivider : Boolean(footerText);
 
+  const isBoldTealService = variant === "service" && hoverStyle === "boldTeal";
+
   return (
     <article
       className={cn(
         "group relative flex h-full flex-col overflow-hidden rounded-card border border-neutral-200 bg-white p-6 shadow-card transition-all duration-200 md:p-8",
         hover && "hover:-translate-y-1 hover:shadow-lg",
+        isBoldTealService && "hover:border-brand-primary/40",
         className,
       )}
     >
-      {variant === "service" && <div className="pointer-events-none absolute inset-0 z-0" />}
+      {variant === "service" && (
+        <div
+          className={cn(
+            "pointer-events-none absolute inset-0 z-0 rounded-card transition-opacity duration-300",
+            isBoldTealService
+              ? "bg-gradient-to-br from-brand-primary-dark via-brand-primary to-brand-primary-light opacity-0 group-hover:opacity-100"
+              : "opacity-0",
+          )}
+        />
+      )}
 
       {variant === "stat" ? (
         <>
@@ -95,7 +109,11 @@ export function MarketingCard({
                   </span>
                 ) : (
                   <p
-                    className={cn("text-3xl font-semibold tracking-tight", toneClasses[numberTone])}
+                    className={cn(
+                      "text-3xl font-semibold tracking-tight transition-colors duration-300",
+                      toneClasses[numberTone],
+                      isBoldTealService && "group-hover:text-white",
+                    )}
                   >
                     {indexLabel}
                   </p>
@@ -105,7 +123,13 @@ export function MarketingCard({
               )}
 
               {badgeLabel && (
-                <span className="inline-flex items-center rounded-full border border-neutral-300 bg-neutral-50 px-4 py-1 text-sm font-medium text-text-secondary">
+                <span
+                  className={cn(
+                    "inline-flex items-center rounded-full border border-neutral-300 bg-neutral-50 px-4 py-1 text-sm font-medium text-text-secondary transition-colors duration-300",
+                    isBoldTealService &&
+                      "group-hover:border-white/40 group-hover:bg-white/15 group-hover:text-white",
+                  )}
+                >
                   {badgeLabel}
                 </span>
               )}
@@ -121,14 +145,22 @@ export function MarketingCard({
           >
             <h3
               className={cn(
-                "mb-3 font-semibold tracking-tight text-text-primary",
+                "mb-3 font-semibold tracking-tight text-text-primary transition-colors duration-300",
                 variant === "service" ? "text-3xl" : "text-2xl",
+                isBoldTealService && "group-hover:text-white",
               )}
             >
               {title}
             </h3>
             {description && (
-              <p className="text-base leading-8 text-text-secondary">{description}</p>
+              <p
+                className={cn(
+                  "text-base leading-8 text-text-secondary transition-colors duration-300",
+                  isBoldTealService && "group-hover:text-neutral-100",
+                )}
+              >
+                {description}
+              </p>
             )}
           </div>
 
@@ -137,9 +169,17 @@ export function MarketingCard({
               className={cn(
                 "relative z-10 mt-6",
                 shouldShowFooterDivider && "border-t border-neutral-200 pt-5",
+                isBoldTealService && shouldShowFooterDivider && "group-hover:border-white/25",
               )}
             >
-              <p className="text-sm leading-7 text-text-muted">{footerText}</p>
+              <p
+                className={cn(
+                  "text-sm leading-7 text-text-muted transition-colors duration-300",
+                  isBoldTealService && "group-hover:text-neutral-100",
+                )}
+              >
+                {footerText}
+              </p>
             </div>
           )}
         </>
