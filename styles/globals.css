@@ -67,7 +67,7 @@
   }
 
   .btn-primary {
-    @apply btn bg-brand-primary text-white hover:bg-brand-primary-light active:bg-brand-primary-dark shadow-sm hover:shadow-md;
+    @apply btn bg-brand-primary text-white hover:bg-brand-primary-light hover:text-white focus:text-white active:bg-brand-primary-dark active:text-white shadow-sm hover:shadow-md;
   }
 
   .btn-secondary {
@@ -164,6 +164,50 @@
     }
   }
 
+  @keyframes heroFadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes heroFloat {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-6px);
+    }
+  }
+
+  @keyframes heroPulse {
+    0%,
+    100% {
+      opacity: 0.25;
+    }
+    50% {
+      opacity: 0.55;
+    }
+  }
+
+  @keyframes heroBarRise {
+    from {
+      opacity: 0;
+      transform: translateY(12px) scaleY(0.65);
+      transform-origin: bottom;
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scaleY(1);
+      transform-origin: bottom;
+    }
+  }
+
   .animate-fade-in {
     animation: fadeIn 0.5s ease-out;
   }
@@ -176,10 +220,75 @@
     animation: scrollLeft 30s linear infinite;
   }
 
+  .hero-enter-text {
+    animation: heroFadeUp 0.8s ease-out both;
+  }
+
+  .hero-float-slow {
+    animation: heroFloat 8.5s ease-in-out infinite;
+  }
+
+  .hero-float-slower {
+    animation: heroFloat 11s ease-in-out infinite;
+  }
+
+  .hero-float-fast {
+    animation: heroFloat 6.5s ease-in-out infinite;
+  }
+
+  .hero-pulse-soft {
+    animation: heroPulse 7s ease-in-out infinite;
+  }
+
+  .hero-bar-rise-1 {
+    animation: heroBarRise 0.7s ease-out 0.12s both;
+  }
+
+  .hero-bar-rise-2 {
+    animation: heroBarRise 0.7s ease-out 0.2s both;
+  }
+
+  .hero-bar-rise-3 {
+    animation: heroBarRise 0.7s ease-out 0.28s both;
+  }
+
+  .hero-bar-rise-4 {
+    animation: heroBarRise 0.7s ease-out 0.36s both;
+  }
+
+  .animate-fade-in-up {
+    animation: slideUp 0.6s ease-out;
+  }
+
+  .animate-stagger-1 {
+    animation: slideUp 0.6s ease-out 0.1s both;
+  }
+
+  .animate-stagger-2 {
+    animation: slideUp 0.6s ease-out 0.2s both;
+  }
+
+  .animate-stagger-3 {
+    animation: slideUp 0.6s ease-out 0.3s both;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .animate-fade-in,
     .animate-slide-up,
-    .animate-scroll-left {
+    .animate-scroll-left,
+    .animate-fade-in-up,
+    .animate-stagger-1,
+    .animate-stagger-2,
+    .animate-stagger-3,
+    .hero-enter-text,
+    .hero-float-slow,
+    .hero-float-slower,
+    .hero-float-fast,
+    .hero-pulse-soft,
+    .hero-bar-rise-1,
+    .hero-bar-rise-2,
+    .hero-bar-rise-3,
+    .hero-bar-rise-4 {
       animation: none;
     }
   }

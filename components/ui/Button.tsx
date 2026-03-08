@@ -33,7 +33,7 @@ export function Button({
 
   const variants = {
     primary:
-      "bg-brand-primary text-white hover:bg-brand-primary-light active:bg-brand-primary-dark shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed",
+      "bg-brand-primary text-white hover:bg-brand-primary-light hover:text-white focus:text-white active:bg-brand-primary-dark active:text-white shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed",
     secondary:
       "border-2 border-brand-secondary bg-transparent text-brand-secondary hover:bg-brand-secondary hover:text-white shadow-sm disabled:opacity-50 disabled:cursor-not-allowed",
     outline:
