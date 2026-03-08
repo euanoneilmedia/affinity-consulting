@@ -61,7 +61,12 @@ export function HeroSection({
                     </Button>
                   )}
                   {secondaryCta && (
-                    <Button variant="secondary" size="lg" href={secondaryCta.href}>
+                    <Button
+                      variant="secondary"
+                      size="lg"
+                      href={secondaryCta.href}
+                      className="!border-brand-primary !text-brand-primary hover:!bg-brand-primary/10 hover:!text-brand-primary-dark"
+                    >
                       {secondaryCta.label}
                     </Button>
                   )}
