@@ -55,6 +55,28 @@ export const baseMetadata: Metadata = {
   alternates: {
     canonical: siteConfig.url,
   },
+  icons: {
+    icon: [
+      {
+        url: "/logos/Affinity-Consulting-Logo-Icon-Colour.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
+      {
+        url: "/logos/Affinity-Consulting-Logo-Icon-Colour.png",
+        sizes: "192x192",
+        type: "image/png",
+      },
+    ],
+    shortcut: "/logos/Affinity-Consulting-Logo-Icon-Colour.png",
+    apple: [
+      {
+        url: "/logos/Affinity-Consulting-Logo-Icon-Colour.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
+  },
 };
 
 /**
