@@ -35,6 +35,9 @@ const trustedLogos: TrustedLogo[] = [
   },
 ];
 
+const logoTintFilter =
+  "brightness(0) saturate(100%) invert(24%) sepia(31%) saturate(984%) hue-rotate(139deg) brightness(93%) contrast(90%)";
+
 /**
  * Trust strip placed high on the page so credibility appears above the fold.
  * Features an infinite ticker animation for smooth logo scrolling.
@@ -61,8 +64,8 @@ export function TrustedBySection() {
                   alt={logo.name}
                   width={logo.width}
                   height={logo.height}
-                  className="max-h-10 w-auto object-contain opacity-60 grayscale transition duration-300 hover:opacity-80 sm:max-h-12"
-                  style={{ filter: "grayscale(1) opacity(0.7)" }}
+                  className="max-h-10 w-auto object-contain opacity-75 transition duration-300 hover:opacity-100 sm:max-h-12"
+                  style={{ filter: logoTintFilter }}
                 />
               </div>
             ))}
@@ -77,8 +80,8 @@ export function TrustedBySection() {
                   alt={logo.name}
                   width={logo.width}
                   height={logo.height}
-                  className="max-h-10 w-auto object-contain opacity-60 grayscale transition duration-300 hover:opacity-80 sm:max-h-12"
-                  style={{ filter: "grayscale(1) opacity(0.7)" }}
+                  className="max-h-10 w-auto object-contain opacity-75 transition duration-300 hover:opacity-100 sm:max-h-12"
+                  style={{ filter: logoTintFilter }}
                 />
               </div>
             ))}
