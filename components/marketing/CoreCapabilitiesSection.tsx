@@ -29,13 +29,13 @@ export function CoreCapabilitiesSection({
       <Container size="xl">
         <div className="mb-10 max-w-3xl">
           <div className="mb-4">
-            <Eyebrow>{eyebrow}</Eyebrow>
+            <Eyebrow variant="onDark">{eyebrow}</Eyebrow>
           </div>
-          <h2 className="mb-4 text-3xl font-semibold tracking-tight text-text-primary sm:text-4xl">
+          <h2 className="mb-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
             {title}
           </h2>
           {description && (
-            <p className="text-base leading-8 text-text-secondary sm:text-lg">{description}</p>
+            <p className="text-base leading-8 text-neutral-200 sm:text-lg">{description}</p>
           )}
         </div>
 
