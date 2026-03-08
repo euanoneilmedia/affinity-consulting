@@ -1,9 +1,11 @@
+import { ReactNode } from "react";
 import { Container, Section } from "@/components/layout";
 import { Eyebrow, MarketingCard } from "@/components/ui";
 
 interface CapabilityItem {
   title: string;
   description: string;
+  icon: ReactNode;
 }
 
 interface CoreCapabilitiesSectionProps {
@@ -37,15 +39,15 @@ export function CoreCapabilitiesSection({
           )}
         </div>
 
-        <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
-          {capabilities.slice(0, 4).map((item, index) => (
+        <div className="grid gap-6 grid-cols-2">
+          {capabilities.slice(0, 4).map((item) => (
             <MarketingCard
               key={item.title}
               variant="service"
-              indexLabel={String(index + 1).padStart(2, "0")}
+              icon={item.icon}
+              numberStyle="circle"
               title={item.title}
               description={item.description}
-              numberTone="muted"
               contentAlign="top"
               className="h-full min-h-[320px] border-neutral-700/80 bg-background-card/80"
             />

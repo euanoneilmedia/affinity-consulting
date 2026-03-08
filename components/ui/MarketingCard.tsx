@@ -1,5 +1,7 @@
 import { cn } from "@/lib/cn";
 
+import { ReactNode } from "react";
+
 type MarketingCardVariant = "service" | "capability" | "stat";
 type NumberTone = "teal" | "muted" | "white";
 type NumberStyle = "text" | "circle";
@@ -7,6 +9,7 @@ type ContentAlign = "top" | "bottom";
 
 interface MarketingCardProps {
   variant?: MarketingCardVariant;
+  icon?: ReactNode;
   indexLabel?: string;
   badgeLabel?: string;
   title: string;
@@ -26,6 +29,7 @@ interface MarketingCardProps {
  */
 export function MarketingCard({
   variant = "service",
+  icon,
   indexLabel,
   badgeLabel,
   title,
@@ -79,17 +83,17 @@ export function MarketingCard({
         </>
       ) : (
         <>
-          {(indexLabel || badgeLabel) && (
+          {(indexLabel || badgeLabel || icon) && (
             <div className="relative z-10 flex items-center justify-between">
-              {indexLabel ? (
+              {icon || indexLabel ? (
                 numberStyle === "circle" ? (
                   <span
                     className={cn(
-                      "inline-flex h-12 w-12 items-center justify-center rounded-full bg-brand-primary/20 text-sm font-semibold shadow-[0_0_18px_rgba(10,122,140,0.25)]",
-                      toneClasses[numberTone],
+                      "inline-flex h-12 w-12 items-center justify-center rounded-full bg-brand-primary",
+                      icon ? "text-white" : toneClasses[numberTone],
                     )}
                   >
-                    {indexLabel}
+                    {icon || indexLabel}
                   </span>
                 ) : (
                   <p

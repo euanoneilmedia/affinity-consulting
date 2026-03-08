@@ -89,21 +89,58 @@ const coreCapabilities = [
     title: "Human-Centred Research",
     description:
       "Understand staff and service user needs before committing to service design and delivery decisions.",
+    icon: (
+      <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+        <circle cx="8" cy="8" r="2" />
+        <circle cx="16" cy="8" r="2" />
+        <path d="M8 10c-2 0-4 1-4 3v2h8v-2c0-2-2-3-4-3z" />
+        <path d="M16 10c-2 0-4 1-4 3v2h8v-2c0-2-2-3-4-3z" />
+        <circle cx="12" cy="20" r="1" />
+        <path d="M11 18c0 0-2 1-2 2s1 2 1 2s1 0 1 0 0-1 1-2 0-2 0-2" />
+      </svg>
+    ),
   },
   {
     title: "Digital Care Model Design",
     description:
       "Shape practical digital-enabled care pathways that improve access, quality, and system flow.",
+    icon: (
+      <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2c-5.5 0-10 4.5-10 10s4.5 10 10 10 10-4.5 10-10-4.5-10-10-10zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z" />
+        <path d="M12 6c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6zm0 10c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z" />
+        <path d="M13 8h-2v4h4v-2h-2z" />
+      </svg>
+    ),
   },
   {
     title: "Programme Delivery Leadership",
     description:
       "Translate strategy into governed implementation plans, milestones, and measurable outcomes.",
+    icon: (
+      <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M3 13h2v8H3zm4-8h2v16H7zm4-2h2v18h-2zm4 4h2v14h-2zm4-4h2v18h-2z" />
+      </svg>
+    ),
   },
   {
     title: "Implementation in Complex Systems",
     description:
       "Navigate real-world constraints across organisations to deliver sustainable transformation.",
+    icon: (
+      <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+        <circle cx="6" cy="6" r="2" />
+        <circle cx="18" cy="6" r="2" />
+        <circle cx="6" cy="18" r="2" />
+        <circle cx="18" cy="18" r="2" />
+        <path
+          d="M6 8v4M8 6h4M16 8v4M18 10h-4M8 16v2M6 18h4M16 16v2M18 18h-4"
+          stroke="currentColor"
+          strokeWidth="1"
+          fill="none"
+          strokeLinecap="round"
+        />
+      </svg>
+    ),
   },
 ];
 
