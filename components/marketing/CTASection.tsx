@@ -27,19 +27,22 @@ export function CtaSection({
   secondaryCta,
 }: CTASectionProps) {
   return (
-    <Section variant="dark" size="sm">
+    <Section variant="light" size="sm">
       <Container size="lg">
-        <DarkCard variant="default" className="border-neutral-600 p-8 text-center sm:p-12">
+        <DarkCard 
+          variant="default" 
+          className="border-white/20 bg-gradient-to-br from-brand-primary-dark via-brand-primary to-brand-primary-light p-8 text-center shadow-xl sm:p-12"
+        >
           {eyebrow && (
             <div className="mb-4">
-              <Eyebrow variant="dark">{eyebrow}</Eyebrow>
+              <Eyebrow variant="onDark">{eyebrow}</Eyebrow>
             </div>
           )}
           <h2 className="mb-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
             {title}
           </h2>
           {description && (
-            <p className="mx-auto mb-8 max-w-2xl text-base leading-8 text-neutral-200 sm:text-lg">
+            <p className="mx-auto mb-8 max-w-2xl text-base leading-8 text-white/90 sm:text-lg">
               {description}
             </p>
           )}
